@@ -1,5 +1,6 @@
 'use client'
 import React, {useState, useEffect } from 'react';
+import Navbar from "@/components/navbar";
 
 
 export default function Home() {
@@ -8,13 +9,12 @@ export default function Home() {
 
 
   return (
-    <div className='App'>
-      <h1>{message}</h1>
-      <h1>{testMessage}</h1>
-      <h2>What?</h2>
-      <div>
-        <p>something</p>
-      </div>
+    <div className=''>
+
+         <Navbar />
+
+
+
     </div>
   )
 }
