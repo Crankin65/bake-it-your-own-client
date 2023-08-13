@@ -1,6 +1,7 @@
 'use client'
 import React, {useState, useEffect } from 'react';
 import Navbar from "@/components/navbar";
+import Navbar2 from "@/components/navbar2";
 
 
 export default function Home() {
@@ -11,8 +12,8 @@ export default function Home() {
   return (
     <div className=''>
 
-         <Navbar />
-
+         {/*<Navbar />*/}
+      <Navbar2 />
 
 
     </div>
