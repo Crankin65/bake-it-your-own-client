@@ -1,11 +1,18 @@
-import React from 'react';
+import React, {useState} from 'react';
 import Profile from '../icons/icons8-person-64.png'
 import recipeIcon from "@/icons/icons8-recipe-64.png";
+
 
 import Image from "next/image";
 import Link from 'next/link'
 
 export default function Navbar2() {
+	const [searchUrl, setSearchUrl] = useState('')
+
+	const handleChange = (value) => {
+		setSearchUrl(value)
+	}
+
 	return(
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
@@ -23,7 +30,16 @@ export default function Navbar2() {
 			</div>
 			<div className="flex-none gap-2">
 				<div className="form-control">
-					<input type="text" placeholder="Search" className="input input-bordered w-24 md:w-auto" />
+					<form onSubmit={(e) => {e.preventDefault(); alert(searchUrl)}} >
+						<input
+							type="text"
+							placeholder="Search"
+							className="input input-bordered w-24 md:w-auto"
+							value={searchUrl}
+							onChange={(e) => handleChange(e.target.value)}
+						/>
+						<input type='submit' className="input input-bordered w-24 md:w-auto" />
+					</form>
 				</div>
 				<div className="dropdown dropdown-end">
 					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
