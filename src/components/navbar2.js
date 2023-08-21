@@ -13,6 +13,16 @@ export default function Navbar2() {
 		setSearchUrl(value)
 	}
 
+	const searchBarSubmit = (event) => {
+		event.preventDefault()
+
+		if (searchUrl.includes('cookieandkate')) {
+			alert('thats a valid url')
+		} else {
+			alert('thats not a valid url')
+		}
+	}
+
 	return(
 		<div className="navbar bg-base-100">
 			<div className="flex-1">
@@ -30,7 +40,7 @@ export default function Navbar2() {
 			</div>
 			<div className="flex-none gap-2">
 				<div className="form-control">
-					<form onSubmit={(e) => {e.preventDefault(); alert(searchUrl)}} >
+					<form onSubmit={(e) => searchBarSubmit(e)} >
 						<input
 							type="text"
 							placeholder="Search"
