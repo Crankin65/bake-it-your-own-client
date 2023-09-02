@@ -13,7 +13,10 @@ export default function Home() {
     <div className=''>
 
          {/*<Navbar />*/}
-      <Navbar2 />
+      <div className=''>
+        <Navbar2 />
+      </div>
+
 
 
     </div>
