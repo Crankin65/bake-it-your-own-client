@@ -1,24 +1,40 @@
 import React, {useState} from 'react';
-import {useRouter} from "next/router";
 import Profile from '../icons/icons8-person-64.png'
 import recipeIcon from "@/icons/icons8-recipe-64.png";
-
 
 import Image from "next/image";
 import Link from 'next/link'
 
-export default function Navbar2() {
-	const [searchUrl, setSearchUrl] = useState('')
+export default function Navbar2(props) {
+	const [searchInput, setSearchInput] = useState('')
+
 
 	const handleChange = (value) => {
-		setSearchUrl(value)
+		setSearchInput(value)
 	}
 
 	const searchBarSubmit = (event) => {
 		event.preventDefault()
+		let url = event.target.url.value
 
-		if (searchUrl.includes('cookieandkate')) {
-			alert('thats a valid url')
+		if (url.includes('cookieandkate')) {
+			// alert('thats a valid url')
+			props.updateSearchUrl(url)
+		} else {
+			alert('thats not a valid url')
+		}
+
+	}
+
+	function onSubmit(e){
+		console.log('onsubmit ran')
+		e.preventDefault();
+		props.updateRefLoad()
+		let url = e.target.url.value
+
+		if (url.includes('cookieandkate') || url.includes('cupcakesandkalechips') ) {
+			// alert('thats a valid url')
+			props.updateSearchUrl(url)
 		} else {
 			alert('thats not a valid url')
 		}
@@ -56,19 +72,20 @@ export default function Navbar2() {
 
 			<div className="flex-none gap-2 ">
 				<div className="form-control md:flex-row flex-col">
-					<form onSubmit={(e) => searchBarSubmit(e)} >
+					<form onSubmit={(event) => onSubmit(event)} >
 						<div className='flex'>
 							<input
 								type="text"
-								placeholder="Search"
+								placeholder="Recipe URL"
 								className="input input-bordered w-24 md:w-auto"
-								value={searchUrl}
+								value={searchInput}
+								name='url'
 								onChange={(e) => handleChange(e.target.value)}
 							/>
 						</div>
 
 						<div className='flex'>
-							<input type='submit' className="input input-bordered w-24 md:w-auto" />
+							<button type='submit' className="input input-bordered w-24 md:w-auto"> Submit </button>
 						</div>
 					</form>
 				</div>

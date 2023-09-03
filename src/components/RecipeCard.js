@@ -3,6 +3,25 @@ import Profile from "@/icons/icons8-person-64.png";
 import Image from "next/image";
 
 export default function RecipeCard(props) {
+
+	function createIngredientList(ingredients) {
+		if (typeof ingredients === 'object') {
+			{ return(props.ingredients.map((ingredient) => (
+					<li key={ingredient}>{ingredient}</li>
+				)))
+			}
+		}
+	}
+
+	function createInstructionList(instructions) {
+		if (typeof instructions === 'object') {
+			{ return(props.instructions.map((instruction) => (
+				<li key={instruction}>{instruction}</li>
+			)))
+			}
+		}
+	}
+
 	return(
 		<div className="card lg:card-side bg-base-100 shadow-xl p-8 m-8">
 			<figure>
@@ -30,18 +49,14 @@ export default function RecipeCard(props) {
 
 				<p>Ingredients:</p>
 				<ul className='list-disc'>
-					{props.ingredients.map((ingredient) => (
-					<li>{ingredient}</li>
-				))}
+					{createIngredientList(props.ingredients)}
 				</ul>
 
 				<br/>
 
 				<p>Instructions:</p>
 				<ul className='list-decimal'>
-					{props.instructions.map((instruction) => (
-						<li>{instruction}</li>
-					))}
+					{createInstructionList(props.instructions)}
 				</ul>
 
 				<p>Notes:</p>
