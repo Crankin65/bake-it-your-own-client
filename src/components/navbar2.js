@@ -16,11 +16,12 @@ export default function Navbar2(props) {
 	function onSubmit(e){
 		console.log('onsubmit ran')
 		e.preventDefault();
-		props.updateRefLoad()
+
 		let url = e.target.url.value
 
 		if (url.includes('cookieandkate') || url.includes('cupcakesandkalechips') ) {
 			// alert('thats a valid url')
+			props.updateRefLoad()
 			props.updateSearchUrl(url)
 		} else {
 			alert('thats not a valid url')

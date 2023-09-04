@@ -23,16 +23,20 @@ export default function RecipeCard(props) {
 	}
 
 	return(
-		<div className="card lg:card-side bg-base-100 shadow-xl p-8 m-8">
-			<figure>
-				<Image
-					src={`${props.overview.imageUrl}`}
-					width={128}
-					height={128}
-					layout='responsive'
-					alt="Recipe Icon"
-				/>
-			</figure>
+		<div className="card bg-base-100 shadow-xl p-8 m-8">
+			<div className="avatar">
+				<div className='w-64 md:w-128 lg:rounded-xl lg:content-center'>
+					<figure>
+						<Image
+							src={`${props.overview.imageUrl}`}
+							width={128}
+							height={128}
+							layout='responsive'
+							alt="Recipe Icon"
+						/>
+					</figure>
+				</div>
+			</div>
 			<div className="card-body p-4 m-4">
 				<h2 className="card-title">{props.title}</h2>
 				<h3>Overview</h3>

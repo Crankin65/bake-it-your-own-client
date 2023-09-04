@@ -21,29 +21,6 @@ export default function Home() {
     console.log(firstLoad.current)
   }
 
-  // useEffect(() => {
-  //   setRecipeState('loading');
-  //   if (firstLoad.current === false) {
-  //     console.log('step 1')
-  //     parseRecipe(searchUrl)
-  //     .then((res) => {
-  //     console.log('step 2')
-  //     fetchRecipeJson(res)
-  //     })
-  //     .then((res) => {
-  //       console.log('step 3')
-  //       setRecipeObject(res)
-  //       setRecipeState('success')
-  //     })
-  //
-  //     .catch((err) => {
-  //       console.log('Error:', err)
-  //       setRecipeState('error')
-  //     })
-  //   }
-  //
-  // }, [searchUrl])
-
   useEffect(() => {
     (async () => {
       setRecipeState('loading');
