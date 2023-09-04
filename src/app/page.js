@@ -3,7 +3,7 @@ import React, {useState, useEffect,useRef } from 'react';
 import Navbar from "@/components/navbar";
 import Navbar2 from "@/components/navbar2";
 import RecipeCard from "@/components/RecipeCard";
-import {parseRecipe, passRecipeUrl} from "@/API Calls/passRecipeUrl";
+import {parseRecipe, fetchRecipeJson} from "@/API Calls/passRecipeUrl";
 
 export default function Home() {
   const [searchUrl, setSearchUrl] = useState('')
@@ -17,36 +17,53 @@ export default function Home() {
 
   function updateRefLoad() {
     firstLoad.current = false
+    console.log('firstload update')
     console.log(firstLoad.current)
   }
 
+  // useEffect(() => {
+  //   setRecipeState('loading');
+  //   if (firstLoad.current === false) {
+  //     console.log('step 1')
+  //     parseRecipe(searchUrl)
+  //     .then((res) => {
+  //     console.log('step 2')
+  //     fetchRecipeJson(res)
+  //     })
+  //     .then((res) => {
+  //       console.log('step 3')
+  //       setRecipeObject(res)
+  //       setRecipeState('success')
+  //     })
+  //
+  //     .catch((err) => {
+  //       console.log('Error:', err)
+  //       setRecipeState('error')
+  //     })
+  //   }
+  //
+  // }, [searchUrl])
 
-    useEffect(() => {
+  useEffect(() => {
+    (async () => {
       setRecipeState('loading');
+
       if (firstLoad.current === false) {
         console.log('step 1')
-        parseRecipe(searchUrl)
-          .then((res) => {
-            console.log('step 2')
-            passRecipeUrl(res)
-            })
-              .then((res) => {
-                console.log('step 3')
-                setRecipeObject(res)
-                setRecipeState('success')
-              })
-
-
-          .catch((err) => {
-            console.log('Error:', err)
-            setRecipeState('error')
-          })
+        let recipeArray = parseRecipe(searchUrl)
+        console.log('step 2')
+        let recipeObject = await fetchRecipeJson(recipeArray)
+        console.log(recipeObject)
+        if (recipeObject) {
+          setRecipeObject(recipeObject)
+          setRecipeState('success')
+        } else {
+          setRecipeState('error')
+        }
       }
 
-    }, [searchUrl])
-
-
-
+    })();
+  }, [searchUrl])
 
 
   return (
@@ -72,7 +89,7 @@ export default function Home() {
             totalTime: recipeState === 'loading' ? 'loading' : recipeObject.overview.totalTime,
             servingNumber: recipeState === 'loading' ? 'loading' : recipeObject.overview.servingNumber,
             cuisine: recipeState === 'loading' ? 'loading' : recipeObject.overview.cuisine,
-            // diet: diet === 'loading' ? 'loading' : recipeObject.overview.diet,
+            imageUrl: recipeState === 'loading' ? 'loading' : recipeObject.overview.imageUrl
 
           }}
 

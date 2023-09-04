@@ -13,19 +13,6 @@ export default function Navbar2(props) {
 		setSearchInput(value)
 	}
 
-	const searchBarSubmit = (event) => {
-		event.preventDefault()
-		let url = event.target.url.value
-
-		if (url.includes('cookieandkate')) {
-			// alert('thats a valid url')
-			props.updateSearchUrl(url)
-		} else {
-			alert('thats not a valid url')
-		}
-
-	}
-
 	function onSubmit(e){
 		console.log('onsubmit ran')
 		e.preventDefault();

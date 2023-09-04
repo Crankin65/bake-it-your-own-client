@@ -26,7 +26,7 @@ export default function RecipeCard(props) {
 		<div className="card lg:card-side bg-base-100 shadow-xl p-8 m-8">
 			<figure>
 				<Image
-					src="https://cookieandkate.com/images/2020/09/pasta-alla-norma-recipe-3.jpg"
+					src={`${props.overview.imageUrl}`}
 					width={128}
 					height={128}
 					layout='responsive'

@@ -34,7 +34,7 @@
 // 	}
 // }
 
- function parseRecipe(url){
+export function parseRecipe(url){
 	if (url) {
 		if (url.toLowerCase().includes('cookieandkate')) {
 			let urlArray = url.split('/')
@@ -69,10 +69,11 @@
 	}
 }
 
-async function passRecipeUrl(recipe) {
+export async function fetchRecipeJson(recipe) {
 
-	const response = await fetch (`http://localhost3010/recipe/${recipe[0]}/${recipe[1]}`, {
-		method: 'GET'
+	const response = await fetch (`http://localhost:3010/recipe/${recipe[0]}/${recipe[1]}`, {
+		method: 'GET',
+		mode: "cors",
 	});
 
 	const recipeJson = await response.json();
@@ -89,6 +90,6 @@ async function passRecipeUrl(recipe) {
 }
 
 module.exports = {
-	passRecipeUrl: passRecipeUrl,
+	fetchRecipeJson: fetchRecipeJson,
 	parseRecipe: parseRecipe
 }
