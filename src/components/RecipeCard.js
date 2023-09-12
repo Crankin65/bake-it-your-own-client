@@ -1,6 +1,7 @@
 import React from 'react'
 import Profile from "@/icons/icons8-person-64.png";
 import Image from "next/image";
+import editRecipeForm from "@/components/Forms/editRecipeForm";
 
 export default function RecipeCard(props) {
 
@@ -22,8 +23,16 @@ export default function RecipeCard(props) {
 		}
 	}
 
+	function createRecipeForm(){
+		let recipeCard = document.getElementById('recipe-card')
+
+		if (recipeCard.classList.contains('visible')){
+
+		}
+	}
+
 	return(
-		<div className="card bg-base-100 shadow-xl p-8 m-8">
+		<div className="card bg-base-100 shadow-xl p-8 m-8 visible" id='recipe-card'>
 			<div className="avatar">
 				<div className='w-64 md:w-128 lg:rounded-xl lg:content-center'>
 					<figure>

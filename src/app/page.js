@@ -3,6 +3,7 @@ import React, {useState, useEffect,useRef } from 'react';
 import Navbar from "@/components/navbar";
 import Navbar2 from "@/components/navbar2";
 import RecipeCard from "@/components/RecipeCard";
+import Footer from '../components/Footer'
 import {parseRecipe, fetchRecipeJson} from "@/API Calls/passRecipeUrl";
 
 export default function Home() {
@@ -81,7 +82,7 @@ export default function Home() {
         }
       </div>
 
-
+    <Footer />
 
     </div>
   )

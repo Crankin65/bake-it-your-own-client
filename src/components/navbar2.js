@@ -1,6 +1,7 @@
 import React, {useState} from 'react';
 import Profile from '../icons/icons8-person-64.png'
 import recipeIcon from "@/icons/icons8-recipe-64.png";
+import hamburgerIcon from '../icons/icons8-menu-50.png'
 
 import Image from "next/image";
 import Link from 'next/link'
@@ -28,6 +29,17 @@ export default function Navbar2(props) {
 		}
 	}
 
+	function openMenu(){
+		let menuItems = document.getElementById('vertical-menu')
+
+		if(menuItems.classList.contains('invisible')){
+			menuItems.classList.remove('invisible')
+			menuItems.classList.add('visible')
+		} else if(menuItems.classList.contains('visible')){
+			menuItems.classList.remove('visible')
+			menuItems.classList.add('invisible')
+		}
+	}
 
 	return(
 		<div className="navbar bg-base-100">
@@ -46,15 +58,60 @@ export default function Navbar2(props) {
 
 				<div className='btn btn-ghost normal-case text-xl hover:font-bold hidden sm:flex'>
 					<Link href='/'>
-						Recipe Scraper
+						Bake It Your Own
 					</Link>
 				</div>
 
-				<div>
-					<Link className='hover:font-bold' href='/displayRecipePage'>
-						Example Page
-					</Link>
+				<div className='p-2 m-2 visible md:hidden' id='menu'>
+					<a onClick={openMenu}>
+						<Image
+							src={hamburgerIcon}
+							width={36}
+							height={36}
+							alt='menu icon'
+							/>
+					</a>
 				</div>
+
+				<div className='p-2 m-2 invisible md:visible' id='vertical-menu'>
+					<ul className='flex flex-col md:flex-row md:content-center'>
+						<li className='flex md:p-2 md:m-2'>
+							<div>
+								<Link className='hover:font-bold' href='/'>
+									About
+								</Link>
+							</div>
+						</li>
+						<li className='flex md:p-2 md:m-2'>
+							<div>
+								<Link className='hover:font-bold' href='/'>
+									Guide
+								</Link>
+							</div>
+						</li>
+						<li className='flex md:p-2 md:m-2'>
+							<div>
+								<Link className='hover:font-bold' href='/displayRecipePage'>
+									Example Page
+								</Link>
+							</div>
+						</li>
+						<li className='flex md:p-2 md:m-2'>
+							<div>
+								<Link className='hover:font-bold' href='/'>
+									Other
+								</Link>
+							</div>
+						</li>
+					</ul>
+
+				</div>
+
+				{/*<div>*/}
+				{/*	<Link className='hover:font-bold' href='/displayRecipePage'>*/}
+				{/*		Example Page*/}
+				{/*	</Link>*/}
+				{/*</div>*/}
 
 			</div>
 
