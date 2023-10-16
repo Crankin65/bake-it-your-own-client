@@ -1,7 +1,9 @@
 import React, {useState} from 'react';
 import Profile from '../icons/icons8-person-64.png'
 import recipeIcon from "@/icons/icons8-recipe-64.png";
+import whiteRecipeIcon from '../icons/icons8-recipe-64 (white).png'
 import hamburgerIcon from '../icons/icons8-menu-50.png'
+import whiteHamburgerIcon from '../icons/icons8-menu-50 (white).png'
 
 import Image from "next/image";
 import Link from 'next/link'
@@ -32,20 +34,20 @@ export default function Navbar2(props) {
 	function openMenu(){
 		let menuItems = document.getElementById('vertical-menu')
 
-		if(menuItems.classList.contains('invisible')){
-			menuItems.classList.remove('invisible')
+		if(menuItems.classList.contains('hidden')){
+			menuItems.classList.remove('hidden')
 			menuItems.classList.add('visible')
 		} else if(menuItems.classList.contains('visible')){
 			menuItems.classList.remove('visible')
-			menuItems.classList.add('invisible')
+			menuItems.classList.add('hidden')
 		}
 	}
 
 	return(
-		<div className="navbar bg-base-100">
-			<div className="flex-1">
+		<div className="navbar bg-base-100 justify-between p-4 border-b-2 border-gray ">
+			<div className="flex">
 
-				<div className='p-2 m-2'>
+				<div className='px-0 dark:hidden'>
 					<Link href='/'>
 						<Image
 							src={recipeIcon}
@@ -56,24 +58,24 @@ export default function Navbar2(props) {
 					</Link>
 				</div>
 
-				<div className='btn btn-ghost normal-case text-xl hover:font-bold hidden sm:flex'>
+				<div className='px-0 dark:visible hidden dark:flex'>
+					<Link href='/'>
+						<Image
+							src={whiteRecipeIcon}
+							width={36}
+							height={36}
+							alt="Recipe Icon"
+						/>
+					</Link>
+				</div>
+
+				<div className='btn btn-ghost normal-case md:text-xl hover:font-bold sm:flex px-2'>
 					<Link href='/'>
 						Bake It Your Own
 					</Link>
 				</div>
 
-				<div className='p-2 m-2 visible md:hidden' id='menu'>
-					<a onClick={openMenu}>
-						<Image
-							src={hamburgerIcon}
-							width={36}
-							height={36}
-							alt='menu icon'
-							/>
-					</a>
-				</div>
-
-				<div className='p-2 m-2 invisible md:visible' id='vertical-menu'>
+				<div className='p-2 m-2 hidden md:visible' id='vertical-menu'>
 					<ul className='flex flex-col md:flex-row md:content-center'>
 						<li className='flex md:p-2 md:m-2'>
 							<div>
@@ -115,14 +117,16 @@ export default function Navbar2(props) {
 
 			</div>
 
-			<div className="flex-none gap-2 ">
+			{/*w-24 md:w-auto*/}
+
+			<div className="flex">
 				<div className="form-control md:flex-row flex-col">
 					<form onSubmit={(event) => onSubmit(event)} >
 						<div className='flex'>
 							<input
 								type="text"
 								placeholder="Recipe URL"
-								className="input input-bordered w-24 md:w-auto"
+								className="input input-bordered w-32 md:w-auto h-8"
 								value={searchInput}
 								name='url'
 								onChange={(e) => handleChange(e.target.value)}
@@ -130,12 +134,12 @@ export default function Navbar2(props) {
 						</div>
 
 						<div className='flex'>
-							<button type='submit' className="input input-bordered w-24 md:w-auto"> Submit </button>
+							<button type='submit' className="input input-bordered w-32 md:w-auto h-8"> Submit </button>
 						</div>
 					</form>
 				</div>
 
-				<div className="dropdown dropdown-end">
+				<div className="dropdown hidden dropdown-end">
 					<label tabIndex={0} className="btn btn-ghost btn-circle avatar">
 						<div className="w-10 rounded-full">
 							<Image
@@ -163,6 +167,30 @@ export default function Navbar2(props) {
 						</li>
 					</ul>
 				</div>
+
+
+				<div className='p-4 visible md:hidden dark:hidden flex' id='menu'>
+					<a onClick={openMenu}>
+						<Image
+							src={hamburgerIcon}
+							width={24}
+							height={24}
+							alt='menu icon'
+						/>
+					</a>
+				</div>
+
+				<div className='p-4 md:hidden dark:visible hidden dark:flex' id='menu'>
+					<a onClick={openMenu}>
+						<Image
+							src={whiteHamburgerIcon}
+							width={24}
+							height={24}
+							alt='menu icon'
+						/>
+					</a>
+				</div>
+
 			</div>
 		</div>
 	)

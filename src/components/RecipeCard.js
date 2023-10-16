@@ -48,31 +48,77 @@ export default function RecipeCard(props) {
 			</div>
 			<div className="card-body p-4 m-4">
 				<h2 className="card-title">{props.title}</h2>
-				<h3>Overview</h3>
-				<div className='flex flex-row'>
-					<ul className='flex flex-row'>
-						<li className='flex'>Prep Time: {props.overview.prepTime}</li>
-						<li className='flex'>Cook Time: {props.overview.cookTime}</li>
-						<li className='flex'>Total Time: {props.overview.totalTime}</li>
-						<li className='flex'>Serving Size: {props.overview.servingSize}</li>
+
+				<div className='font-bold'>
+					<p>Overview</p>
+				</div>
+
+				<div className=''>
+					<ul className='flex-row'>
+						<li className='flex flex-col py-2'>
+							<div className='font-medium flex'>
+								Prep Time:
+							</div>
+
+							<div className='flex'>
+								{props.overview.prepTime}
+							</div>
+						</li>
+
+						<li className='flex flex-col py-2'>
+							<div className='font-medium flex'>
+								Cook Time:
+							</div>
+
+							<div className='flex'>
+								{props.overview.cookTime}
+							</div>
+						</li>
+
+						<li className='flex flex-col py-2'>
+							<div className='font-medium flex'>
+								Total Time:
+							</div>
+
+							<div className='flex'>
+								{props.overview.totalTime}
+							</div>
+						</li>
+
+						<li className='flex flex-col py-2'>
+							<div className='font-medium flex'>
+								Serving Size:
+							</div>
+
+							<div className='flex'>
+								{props.overview.servingSize}
+							</div>
+						</li>
+
 					</ul>
 				</div>
 
 				<br/>
 
-				<p>Ingredients:</p>
+				<div className='font-bold'>
+					<p>Ingredients:</p>
+				</div>
 				<ul className='list-disc'>
 					{createIngredientList(props.ingredients)}
 				</ul>
 
 				<br/>
 
-				<p>Instructions:</p>
+				<div className='font-bold'>
+					<p>Instructions:</p>
+				</div>
 				<ul className='list-decimal'>
 					{createInstructionList(props.instructions)}
 				</ul>
 
-				<p>Notes:</p>
+				<div className='font-bold'>
+					<p>Notes:</p>
+				</div>
 				<div className="card-actions justify-end">
 					<button className="btn btn-primary">Edit</button>
 				</div>
