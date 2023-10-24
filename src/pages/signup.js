@@ -2,10 +2,9 @@ import '../app/globals.css'
 import React from 'react'
 import Navbar2 from "@/components/navbar2";
 import Footer from "@/components/Footer";
-import LoginComponent from "@/components/auth/loginComponent";
-import Instructions from "@/components/Instructions";
+import SignUpComponent from "@/components/auth/signupComponent";
 
-export default function Login(){
+export default function Signup(){
 	return(
 		<>
 			<div className=''>
@@ -14,7 +13,7 @@ export default function Login(){
 
 			<div className='grid py-16 my-16'>
 				<div className='place-self-center darK:border-white border-2 p-8'>
-				<LoginComponent />
+				<SignUpComponent />
 				</div>
 			</div>
 
