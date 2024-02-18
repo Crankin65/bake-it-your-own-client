@@ -1,6 +1,5 @@
 import React, {useState, useEffect } from 'react';
 import '../app/globals.css'
-import Navbar from "@/components/navbar";
 import Navbar2 from "@/components/navbar2";
 import RecipeCard from "@/components/RecipeCard";
 
@@ -17,7 +16,8 @@ export default function displayRecipePage() {
 					prepTime: '20 minutes',
 					cookTime: '50 minutes',
 					totalTime: '1 hour, 10 minutes',
-					servingSize: '4 Servings'
+					servingSize: '4 Servings',
+					imageUrl:"https://cookieandkate.com/images/2020/09/pasta-alla-norma-recipe-3.jpg"
 				}}
 				ingredients= {['1 batch Super Simple Marinara Sauce, or 2 cups (16 ounces) store-bought marinara',
 					'2 medium eggplants (about 2 ¼ pounds total)',

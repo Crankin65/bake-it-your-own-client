@@ -1,5 +1,4 @@
 import React from 'react'
-import Profile from "@/icons/icons8-person-64.png";
 import Image from "next/image";
 import editRecipeForm from "@/components/Forms/editRecipeForm";
 

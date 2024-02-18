@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "errorhandler": "^1.5.1",
     "eslint": "8.45.0",
     "eslint-config-next": "13.4.10",
+    "express-session": "^1.17.3",
     "next": "^13.4.10",
     "react": "18.2.0",
     "react-dom": "18.2.0"

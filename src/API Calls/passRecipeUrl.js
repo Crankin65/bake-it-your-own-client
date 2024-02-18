@@ -71,7 +71,7 @@ export function parseRecipe(url){
 
 export async function fetchRecipeJson(recipe) {
 
-	const response = await fetch (`http://localhost:3010/recipe/${recipe[0]}/${recipe[1]}`, {
+	const response = await fetch (`http://localhost:8000/recipe/${recipe[0]}/${recipe[1]}`, {
 		method: 'GET',
 		mode: "cors",
 	});
