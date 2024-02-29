@@ -135,94 +135,94 @@ export default function Navbar2(props) {
 						</div>
 
 
-						{/*Icon List Bar*/}
-						<div className='p-2 m-2 hidden md:visible' id='vertical-menu'>
+						{/*/!*Icon List Bar*!/*/}
+						{/*<div className='p-2 m-2 hidden md:visible' id='vertical-menu'>*/}
 
-							<ul className='flex flex-col md:flex-row md:content-center'>
+						{/*	<ul className='flex flex-col md:flex-row md:content-center'>*/}
 
-								<li className='flex md:p-2 md:m-2'>
-									<div className='p-4 visible md:hidden dark:hidden flex' id='menu'>
-										<a onClick={openMenu}>
-											<Image
-												src={hamburgerIcon}
-												width={24}
-												height={24}
-												alt='menu icon'
-											/>
-										</a>
-									</div>
-								</li>
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div className='p-4 visible md:hidden dark:hidden flex' id='menu'>*/}
+						{/*				<a onClick={openMenu}>*/}
+						{/*					<Image*/}
+						{/*						src={hamburgerIcon}*/}
+						{/*						width={24}*/}
+						{/*						height={24}*/}
+						{/*						alt='menu icon'*/}
+						{/*					/>*/}
+						{/*				</a>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
 
-								<li className='flex md:p-2 md:m-2'>
-									<div className='p-4 md:hidden dark:visible hidden dark:flex' id='menu'>
-										<a onClick={openMenu}>
-											<Image
-												src={whiteHamburgerIcon}
-												width={24}
-												height={24}
-												alt='menu icon'
-											/>
-										</a>
-									</div>
-								</li>
-
-
-								<li className='flex md:p-2 md:m-2'>
-									<div>
-										<Link className='hover:font-bold' href='/'>
-											About
-										</Link>
-									</div>
-								</li>
-								<li className='flex md:p-2 md:m-2'>
-									<div>
-										<Link className='hover:font-bold' href='/'>
-											Guide
-										</Link>
-									</div>
-								</li>
-								<li className='flex md:p-2 md:m-2'>
-									<div>
-										<Link className='hover:font-bold' href='/displayRecipePage'>
-											Example Page
-										</Link>
-									</div>
-								</li>
-								<li className='flex md:p-2 md:m-2'>
-									<div>
-										<Link className='hover:font-bold' href='/'>
-											Other
-										</Link>
-									</div>
-								</li>
-							</ul>
-
-						</div>
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div className='p-4 md:hidden dark:visible hidden dark:flex' id='menu'>*/}
+						{/*				<a onClick={openMenu}>*/}
+						{/*					<Image*/}
+						{/*						src={whiteHamburgerIcon}*/}
+						{/*						width={24}*/}
+						{/*						height={24}*/}
+						{/*						alt='menu icon'*/}
+						{/*					/>*/}
+						{/*				</a>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
 
 
-						{/*Hamburger Menu Black*/}
-						<div className='p-4 visible md:hidden dark:hidden flex' id='menu'>
-							<a onClick={openMenu}>
-								<Image
-									src={hamburgerIcon}
-									width={24}
-									height={24}
-									alt='menu icon'
-								/>
-							</a>
-						</div>
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div>*/}
+						{/*				<Link className='hover:font-bold' href='/'>*/}
+						{/*					About*/}
+						{/*				</Link>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div>*/}
+						{/*				<Link className='hover:font-bold' href='/'>*/}
+						{/*					Guide*/}
+						{/*				</Link>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div>*/}
+						{/*				<Link className='hover:font-bold' href='/displayRecipePage'>*/}
+						{/*					Example Page*/}
+						{/*				</Link>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
+						{/*		<li className='flex md:p-2 md:m-2'>*/}
+						{/*			<div>*/}
+						{/*				<Link className='hover:font-bold' href='/'>*/}
+						{/*					Other*/}
+						{/*				</Link>*/}
+						{/*			</div>*/}
+						{/*		</li>*/}
+						{/*	</ul>*/}
 
-						{/*Hamburger Menu White*/}
-						<div className='p-4 md:hidden dark:visible hidden dark:flex' id='menu'>
-							<a onClick={openMenu}>
-								<Image
-									src={whiteHamburgerIcon}
-									width={24}
-									height={24}
-									alt='menu icon'
-								/>
-							</a>
-						</div>
+						{/*</div>*/}
+
+
+						{/*/!*Hamburger Menu Black*!/*/}
+						{/*<div className='p-4 visible md:hidden dark:hidden flex' id='menu'>*/}
+						{/*	<a onClick={openMenu}>*/}
+						{/*		<Image*/}
+						{/*			src={hamburgerIcon}*/}
+						{/*			width={24}*/}
+						{/*			height={24}*/}
+						{/*			alt='menu icon'*/}
+						{/*		/>*/}
+						{/*	</a>*/}
+						{/*</div>*/}
+
+						{/*/!*Hamburger Menu White*!/*/}
+						{/*<div className='p-4 md:hidden dark:visible hidden dark:flex' id='menu'>*/}
+						{/*	<a onClick={openMenu}>*/}
+						{/*		<Image*/}
+						{/*			src={whiteHamburgerIcon}*/}
+						{/*			width={24}*/}
+						{/*			height={24}*/}
+						{/*			alt='menu icon'*/}
+						{/*		/>*/}
+						{/*	</a>*/}
+						{/*</div>*/}
 
 					</div>
 

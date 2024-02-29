@@ -118,9 +118,9 @@ export default function RecipeCard(props) {
 				<div className='font-bold'>
 					<p>Notes:</p>
 				</div>
-				<div className="card-actions justify-end">
-					<button className="btn btn-primary">Edit</button>
-				</div>
+				{/*<div className="card-actions justify-end">*/}
+				{/*	<button className="btn btn-primary">Edit</button>*/}
+				{/*</div>*/}
 			</div>
 		</div>
 	)
