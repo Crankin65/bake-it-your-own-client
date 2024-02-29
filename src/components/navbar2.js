@@ -44,7 +44,7 @@ export default function Navbar2(props) {
 	}
 
 	return(
-		<div className="navbar bg-base-100 justify-between p-4 border-b-2 border-gray ">
+		<div className="navbar bg-base-100 justify-between p-4 border-b-2 border-gray">
 
 				<div className='flex'>
 					{/*Black Recipe*/}

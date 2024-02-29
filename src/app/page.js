@@ -4,6 +4,7 @@ import Navbar from "@/components/navbar";
 import Navbar2 from "@/components/navbar2";
 import RecipeCard from "@/components/RecipeCard";
 import LoadingRecipe from "@/components/LoadingRecipe";
+import About from '../components/About'
 import Footer from '../components/Footer'
 import {parseRecipe, fetchRecipeJson} from "@/API Calls/passRecipeUrl";
 
@@ -56,6 +57,8 @@ export default function Home() {
         />
       </div>
 
+
+      {searchUrl ? null : <About />}
 
       <div className='flex flex-col items-center p-8'>
         { recipeState === 'loading' ?
