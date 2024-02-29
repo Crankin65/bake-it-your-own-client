@@ -12,7 +12,7 @@ export default function About(){
 			<br/>
 
 			<div className='flex flex-col font-light px-2 bg-white rounded dark:bg-gray-800 py-4 text-center'>
-				<p>	This application let's you pull information from two recipe based websites (&quot;cookieandkate.com&quot;
+				<p>	This application let&apos;s you pull information from two recipe based websites (&quot;cookieandkate.com&quot;
 					and &quot;cupcakesandkalechips.com&quot; ).</p>
 				<br/>
 
@@ -26,7 +26,7 @@ export default function About(){
 
 				<br/>
 
-				<p>This application is free to use but pleae let me know if there&apos;s any other features you&apos;d like to see!</p>
+				<p>This application is free to use but please let me know if there&apos;s any other features you&apos;d like to see!</p>
 
 			</div>
 

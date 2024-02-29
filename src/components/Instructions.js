@@ -11,7 +11,7 @@ export default function Instructions() {
 				<ol className='m-2 p-2'>
 
 					<li>
-						Find the recipe URL that you're looking to parse.
+						Find the recipe URL that you&apos;re looking to parse.
 						(Right now this only works for https://cookieandkate.com/ and https://cupcakesandkalechips.com/
 					</li>
 
