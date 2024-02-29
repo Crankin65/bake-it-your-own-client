@@ -1,38 +1,3 @@
-// export default async function passRecipeUrl(url) {
-// 	if (url) {
-// 		if (url.toLowerCase().includes('cookieandkate')) {
-// 			let urlArray = url.split('/')
-// 			let cookieAndKateUrl = urlArray.findIndex((mainUrl)=> mainUrl === 'cookieandkate')
-// 			let recipe = urlArray[cookieAndKateUrl]
-//
-// 			const response = await fetch (`http://localhost3010/recipe/cookieandkate/${recipe}`, {
-// 				method: 'GET'
-// 			});
-//
-// 			return response
-// 		} else if(url.toLowerCase().includes('cupcakesandkalechips')) {
-// 			let urlArray = url.split('/')
-// 			let cookieAndKateUrl = urlArray.findIndex((mainUrl)=> mainUrl === 'cupcakesandkalechips')
-// 			let recipe = urlArray[cookieAndKateUrl]
-//
-// 			const response = await fetch (`http://localhost3010/recipe/cookieandkate/${recipe}`, {
-// 				method: 'GET'
-// 			});
-//
-// 			return response
-// 		} else {
-// 			alert('invalid url')
-// 		}
-// 	}
-//
-// 	const recipeJson = await response.json();
-// 	const recipeObject = {
-// 		overview: recipeJson.recipeObject.overview,
-// 		ingredients: recipeJson.recipeObject.ingredients,
-// 		instructions: recipeJson.recipeObject.instructions,
-// 		notes: recipeJson.recipeObject.notes,
-// 	}
-// }
 
 export function parseRecipe(url){
 	if (url) {
@@ -71,7 +36,7 @@ export function parseRecipe(url){
 
 export async function fetchRecipeJson(recipe) {
 
-	const response = await fetch (`http://localhost:8000/recipe/${recipe[0]}/${recipe[1]}`, {
+	const response = await fetch (`https://recipe-scraper-server.onrender.com/recipe/${recipe[0]}/${recipe[1]}`, {
 		method: 'GET',
 		mode: "cors",
 	});
