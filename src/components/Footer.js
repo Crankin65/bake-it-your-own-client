@@ -9,15 +9,15 @@ export default function Footer() {
 				<Link href="https://cameronleerankin.com" className="hover:underline">Cameron Rankin</Link> &nbsp;
     </span>
 				<ul className="flex flex-row flex-wrap items-center mt-3 text-sm font-medium text-gray-500 dark:text-gray-400 sm:mt-0 px-2">
-					<li>
-						<Link href="/about" className="mr-4 hover:underline md:mr-6 ">About</Link>
-					</li>
+					{/*<li>*/}
+					{/*	<Link href="/about" className="mr-4 hover:underline md:mr-6 ">About</Link>*/}
+					{/*</li>*/}
 					<li>
 						<Link href="https://cameronleerankin.com" className="mr-4 hover:underline md:mr-6">Website</Link>
 					</li>
-					<li>
-						<Link href="cameron@cameronleerankin.com" className="hover:underline">Contact</Link>
-					</li>
+					{/*<li>*/}
+					{/*	<a href="cameron@cameronleerankin.com" className="hover:underline">Contact</a>*/}
+					{/*</li>*/}
 				</ul>
 			</div>
 		</footer>

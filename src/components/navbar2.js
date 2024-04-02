@@ -16,6 +16,10 @@ export default function Navbar2(props) {
 		setSearchInput(value)
 	}
 
+	const eraseSearchBar = () => {
+		handleChange('')
+	}
+
 	function onSubmit(e){
 		console.log('onsubmit ran')
 		e.preventDefault();
@@ -72,7 +76,7 @@ export default function Navbar2(props) {
 					</div>
 
 					{/*Bake It Your Own*/}
-					<div className='btn btn-ghost normal-case md:text-xl hover:font-bold sm:flex px-2'>
+					<div className='btn btn-ghost normal-case md:text-xl hover:font-bold sm:flex px-2' onClick={eraseSearchBar}>
 						<Link href='/'>
 							Bake It Your Own
 						</Link>
